@@ -12,4 +12,4 @@ Student Hub is a responsive educational website built using HTML, CSS, and JavaS
 - CSS3
 - JavaScript 
  # link to access:
- 
+ https://n74nikhil.github.io/project_student-hub/
