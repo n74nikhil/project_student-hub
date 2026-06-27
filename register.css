@@ -1,0 +1,44 @@
+
+        ::selection { background: #00ff9d; color: #000; }
+        body { font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Oswald', sans-serif; }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-content { animation: marquee 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        .float-anim-delay { animation: float 6s ease-in-out 2s infinite; }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0,255,157,0.3); }
+            50% { box-shadow: 0 0 40px rgba(0,255,157,0.6); }
+        }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-slow { animation: spin-slow 10s linear infinite; }
+
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+            color: transparent;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .gradient-border {
+            background: linear-gradient(135deg, #00ff9d, #3b82f6, #ff006e);
+            padding: 1px;
+            border-radius: 9999px;
+        }

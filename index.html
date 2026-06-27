@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub — Connect. Collaborate. Create.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel = "stylesheet" href="register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Oswald', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0b0b15',
+                        neon: '#00ff9d',
+                        pink: '#ff006e',
+                    }
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body class="bg-dark text-white overflow-x-hidden">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-lg bg-neon flex items-center justify-center">
+                    <span class="text-black font-heading font-bold text-lg">S</span>
+                </div>
+                <span class="font-heading font-bold text-xl uppercase tracking-tight">StudentHub</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Features</a>
+                <a href="#students" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Students</a>
+                <a href="#companies" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Companies</a>
+                <a href="#community" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Community</a>
+                <a href="#pricing" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Pricing</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors px-4 py-2">Log In</button>
+                <button class="bg-neon text-black text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-white transition-all duration-300">Join Free</button>
+            </div>
+
+            <button id="menuBtn" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-dark/95 backdrop-blur-md border-t border-white/10">
+            <div class="px-6 py-8 flex flex-col gap-6">
+                <a href="#features" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Features</a>
+                <a href="#students" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Students</a>
+                <a href="#companies" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Companies</a>
+                <a href="#community" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Community</a>
+                <a href="#pricing" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-neon transition-colors">Pricing</a>
+                <hr class="border-white/10">
+                <button class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors text-left">Log In</button>
+                <button class="bg-neon text-black text-sm font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-white transition-all duration-300 w-full">Join Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/studenthub-hero/1920/1080.jpg" alt="Students collaborating" class="w-full h-full object-cover opacity-40 mix-blend-luminosity">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-dark"></div>
+
+        <div class="absolute top-32 right-20 w-64 h-64 bg-blue-600 rounded-full blur-[100px] opacity-30 float-anim"></div>
+        <div class="absolute bottom-40 left-10 w-48 h-48 bg-pink rounded-full blur-[100px] opacity-20 float-anim-delay"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon rounded-full blur-[200px] opacity-5"></div>
+
+        <div class="absolute top-40 right-10 md:right-32 w-24 h-24 md:w-32 md:h-32 spin-slow">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <defs>
+                    <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                </defs>
+                <text fill="#00ff9d" font-size="8.5" font-family="Oswald" font-weight="700" letter-spacing="4" text-transform="uppercase">
+                    <textPath href="#circlePath">CONNECT • COLLABORATE • CREATE • </textPath>
+                </text>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <i data-lucide="zap" class="w-6 h-6 text-neon"></i>
+            </div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-5 py-2 mb-8">
+                <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400"> XXXX Students Already Connected</span>
+            </div>
+
+            <h1 class="font-heading font-bold uppercase leading-[0.85] tracking-tighter">
+                <span class="block text-5xl md:text-7xl lg:text-[8rem] text-white">Your Campus</span>
+                <span class="block text-5xl md:text-7xl lg:text-[8rem] text-outline">Network,</span>
+                <span class="block text-5xl md:text-7xl lg:text-[8rem] text-white">Re<span class="text-neon">imagined</span></span>
+            </h1>
+
+            <p class="mt-8 text-sm md:text-base text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Find hackathon teammates, collaborate on projects, and connect with students across colleges. Companies discover talent. Clubs find audiences. Everything starts here.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="gradient-border">
+                    <button class="bg-dark text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-neon hover:text-black transition-all duration-300 flex items-center gap-3">
+                        <span>Get Started Free</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <button class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white px-8 py-4 rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-3">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i>
+                    <span>Watch Demo</span>
+                </button>
+            </div>
+
+            <div class="mt-16 flex flex-wrap items-center justify-center gap-8 opacity-40">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Trusted by teams from</span>
+                <span class="font-heading text-lg text-gray-500">IIT</span>
+                <span class="font-heading text-lg text-gray-500">NIT</span>
+                <span class="font-heading text-lg text-gray-500">BITS</span>
+                <span class="font-heading text-lg text-gray-500">IIIT</span>
+                <span class="font-heading text-lg text-gray-500">VIT</span>
+                <span class="font-heading text-lg text-gray-500">DTU</span>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-[10px] uppercase tracking-widest text-gray-600">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-neon to-transparent"></div>
+        </div>
+    </section>
+
+    <section class="border-y border-white/10 py-4 overflow-hidden bg-dark">
+        <div class="marquee-content flex items-center gap-8 whitespace-nowrap" style="width: max-content;">
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Hackathon Teams</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Project Collaborators</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Job Postings</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Club Promotions</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Banner Advertising</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Campus Events</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Internship Matching</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Hackathon Teams</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Project Collaborators</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Job Postings</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Club Promotions</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Banner Advertising</span>
+            <span class="text-neon">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Campus Events</span>
+            <span class="text-pink">✦</span>
+            <span class="font-heading text-2xl font-bold uppercase tracking-tight text-white/10">Internship Matching</span>
+            <span class="text-neon">✦</span>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 border-b border-white/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="text-center">
+                <div class="font-heading text-4xl md:text-6xl font-bold text-neon">X<span class="text-pink">+</span></div>
+                <p class="mt-2 text-xs font-bold uppercase tracking-widest text-gray-500">Active Students</p>
+            </div>
+            <div class="text-center">
+                <div class="font-heading text-4xl md:text-6xl font-bold text-white">X<span class="text-neon">+</span></div>
+                <p class="mt-2 text-xs font-bold uppercase tracking-widest text-gray-500">Colleges</p>
+            </div>
+            <div class="text-center">
+                <div class="font-heading text-4xl md:text-6xl font-bold text-white">X<span class="text-pink">+</span></div>
+                <p class="mt-2 text-xs font-bold uppercase tracking-widest text-gray-500">Projects Matched</p>
+            </div>
+            <div class="text-center">
+                <div class="font-heading text-4xl md:text-6xl font-bold text-white">X<span class="text-neon">+</span></div>
+                <p class="mt-2 text-xs font-bold uppercase tracking-widest text-gray-500">Partner Companies</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-20">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-neon">How It Works</span>
+                <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4">
+                    One Platform.<br><span class="text-outline">Endless</span> Possibilities.
+                </h2>
+                <p class="mt-6 text-sm text-gray-400 leading-relaxed max-w-xl">
+                    Whether you're a student looking for teammates, a company seeking talent, or a club wanting reach — StudentHub handles it all.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="group relative bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="w-12 h-12 rounded-full bg-neon/10 flex items-center justify-center mb-6 group-hover:bg-neon/20 transition-colors">
+                        <i data-lucide="users" class="w-5 h-5 text-neon"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-tight mb-3">Find Teammates</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Search by skill, college, or interest. Find the perfect hackathon or project partner in seconds.</p>
+                    <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-neon"></i>
+                    </div>
+                </div>
+
+                <div class="group relative bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="w-12 h-12 rounded-full bg-pink/10 flex items-center justify-center mb-6 group-hover:bg-pink/20 transition-colors">
+                        <i data-lucide="briefcase" class="w-5 h-5 text-pink"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-tight mb-3">Job Board</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Companies post internships and jobs. Students apply with their verified profiles and project portfolios.</p>
+                    <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-pink"></i>
+                    </div>
+                </div>
+
+                <div class="group relative bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="megaphone" class="w-5 h-5 text-blue-400"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-tight mb-3">Promotions</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Clubs and companies run targeted banner campaigns to reach the right student audience at scale.</p>
+                    <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-blue-400"></i>
+                    </div>
+                </div>
+
+                <div class="group relative bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:bg-yellow-500/20 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-yellow-400"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-tight mb-3">Direct Chat</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Built-in messaging lets you discuss ideas, share files, and coordinate without leaving the platform.</p>
+                    <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="students" class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neon">For Students</span>
+                    <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4 text-black">
+                        Build Beyond<br>Your <span class="text-neon">Classroom</span>
+                    </h2>
+                    <p class="mt-6 text-sm text-gray-600 leading-relaxed max-w-md">
+                        Stop being limited by your college walls. Connect with passionate students nationwide and build things that matter.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="code-2" class="w-4 h-4 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight text-black">Hackathon Matchmaking</h4>
+                                <p class="text-sm text-gray-500 mt-1">Post your hackathon or find one. Get matched with complementary skills — dev, design, strategy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-pink/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="folder-kanban" class="w-4 h-4 text-pink"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight text-black">Project Collaboration</h4>
+                                <p class="text-sm text-gray-500 mt-1">Need a frontend dev for your ML project? Looking for research partners? Post it and get responses.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="trophy" class="w-4 h-4 text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight text-black">Verified Portfolio</h4>
+                                <p class="text-sm text-gray-500 mt-1">Showcase your projects, hackathon wins, and skills. Companies see your verified student profile.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight text-black">Cross-College Network</h4>
+                                <p class="text-sm text-gray-500 mt-1">Connect with students from IITs, NITs, state colleges — diversity that sparks innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="relative overflow-hidden rounded-sm">
+                                <img src="https://picsum.photos/seed/hackathon-team/500/600.jpg" alt="Hackathon team" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <span class="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-neon">Hackathons</span>
+                            </div>
+                            <div class="relative overflow-hidden rounded-sm">
+                                <img src="https://picsum.photos/seed/students-coding/500/400.jpg" alt="Students coding" class="w-full h-40 object-cover hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <span class="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-pink">Projects</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="relative overflow-hidden rounded-sm">
+                                <img src="https://picsum.photos/seed/campus-event/500/400.jpg" alt="Campus event" class="w-full h-40 object-cover hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <span class="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-blue-400">Events</span>
+                            </div>
+                            <div class="relative overflow-hidden rounded-sm">
+                                <img src="https://picsum.photos/seed/student-network/500/600.jpg" alt="Student network" class="w-full h-64 object-cover hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <span class="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest text-yellow-400">Network</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-2xl px-6 py-4 flex items-center gap-6 z-10">
+                        <div class="text-center">
+                            <div class="font-heading text-2xl font-bold text-black">3.2K</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Teams Formed</div>
+                        </div>
+                        <div class="w-px h-10 bg-gray-200"></div>
+                        <div class="text-center">
+                            <div class="font-heading text-2xl font-bold text-neon">94%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Match Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="companies" class="py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://picsum.photos/seed/company-hiring/800/600.jpg" alt="Company hiring" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent"></div>
+                    </div>
+
+                    <div class="absolute top-6 right-6 bg-dark/90 backdrop-blur-md border border-white/10 rounded-lg p-4 pulse-glow">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-neon/20 flex items-center justify-center">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Job Views Today</div>
+                                <div class="font-heading text-xl font-bold text-neon">12,847</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-6 left-6 bg-dark/90 backdrop-blur-md border border-white/10 rounded-lg p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-pink/20 flex items-center justify-center">
+                                <i data-lucide="user-check" class="w-5 h-5 text-pink"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Applications</div>
+                                <div class="font-heading text-xl font-bold text-white">847</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-pink">For Companies & Clubs</span>
+                    <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4">
+                        Reach The<br><span class="text-pink">Right</span> Talent
+                    </h2>
+                    <p class="mt-6 text-sm text-gray-400 leading-relaxed max-w-md">
+                        Stop posting on generic job boards. Access a curated pool of verified, project-building students who actually ship.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="target" class="w-4 h-4 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight">Targeted Job Posts</h4>
+                                <p class="text-sm text-gray-500 mt-1">Filter by skill, college tier, location, availability. Reach only relevant candidates.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-pink/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="layout" class="w-4 h-4 text-pink"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight">Banner Advertising</h4>
+                                <p class="text-sm text-gray-500 mt-1">Premium banner placements across feeds, profiles, and event pages for maximum visibility.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="bar-chart-3" class="w-4 h-4 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight">Analytics Dashboard</h4>
+                                <p class="text-sm text-gray-500 mt-1">Track impressions, clicks, applications, and conversion rates in real-time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="building-2" class="w-4 h-4 text-yellow-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-bold uppercase tracking-tight">Company Profile</h4>
+                                <p class="text-sm text-gray-500 mt-1">Build your employer brand with a dedicated page — culture, perks, open roles, and team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="mt-10 bg-pink text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3">
+                        <span>Partner With Us</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-neon">Simple Process</span>
+                <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4 text-black">
+                    Three Steps To<br><span class="text-neon">Get Started</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="relative bg-white rounded-sm p-10 border border-gray-200 hover:shadow-xl transition-all duration-500 group">
+                    <div class="font-heading text-8xl font-bold text-gray-100 absolute top-4 right-6">01</div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-full bg-neon/10 flex items-center justify-center mb-6 group-hover:bg-neon/20 transition-colors">
+                            <i data-lucide="user-plus" class="w-6 h-6 text-neon"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold uppercase tracking-tight text-black mb-3">Create Profile</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Sign up with your college email. Add skills, interests, projects, and what you're looking for. Takes 2 minutes.</p>
+                    </div>
+                </div>
+
+                <div class="relative bg-white rounded-sm p-10 border border-gray-200 hover:shadow-xl transition-all duration-500 group md:translate-y-8">
+                    <div class="font-heading text-8xl font-bold text-gray-100 absolute top-4 right-6">02</div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-full bg-pink/10 flex items-center justify-center mb-6 group-hover:bg-pink/20 transition-colors">
+                            <i data-lucide="search" class="w-6 h-6 text-pink"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold uppercase tracking-tight text-black mb-3">Post or Browse</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Post your requirement — hackathon team, project help, or job opening. Or browse what others are posting.</p>
+                    </div>
+                </div>
+
+                <div class="relative bg-white rounded-sm p-10 border border-gray-200 hover:shadow-xl transition-all duration-500 group">
+                    <div class="font-heading text-8xl font-bold text-gray-100 absolute top-4 right-6">03</div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                            <i data-lucide="handshake" class="w-6 h-6 text-blue-500"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold uppercase tracking-tight text-black mb-3">Connect & Build</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed">Chat, plan, and start building together. Track your projects and showcase results on your profile.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-neon">Live Feed</span>
+                    <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4">
+                        What's <span class="text-neon">Happening</span>
+                    </h2>
+                </div>
+                <div class="flex gap-2">
+                    <button id="filterAll" class="filter-btn text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full bg-neon text-black transition-all duration-300" data-filter="all">All</button>
+                    <button class="filter-btn text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full border border-white/10 text-gray-400 hover:border-neon hover:text-neon transition-all duration-300" data-filter="hackathon">Hackathons</button>
+                    <button class="filter-btn text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full border border-white/10 text-gray-400 hover:border-neon hover:text-neon transition-all duration-300" data-filter="project">Projects</button>
+                    <button class="filter-btn text-xs font-bold uppercase tracking-widest px-5 py-2 rounded-full border border-white/10 text-gray-400 hover:border-neon hover:text-neon transition-all duration-300" data-filter="job">Jobs</button>
+                </div>
+            </div>
+
+            <div id="feedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="hackathon">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/hack-post-1/600/300.jpg" alt="Hackathon" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-neon text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Hackathon</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-neon to-blue-500"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Arjun Mehta</div>
+                                <div class="text-[10px] text-gray-500">IIT Bombay • 2h ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">Looking for ML Developer — Smart India Hackathon</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Need someone strong in PyTorch for our healthcare solution. We have frontend and backend covered.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">ML/AI</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Python</span>
+                            </div>
+                            <button class="text-neon text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="project">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/project-post-2/600/300.jpg" alt="Project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Project</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink to-purple-500"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Priya Sharma</div>
+                                <div class="text-[10px] text-gray-500">NIT Trichy • 5h ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">Building Open Source LMS — Need UI/UX Designer</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Working on a free learning management system for rural schools. Need someone passionate about ed-tech design.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">UI/UX</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">EdTech</span>
+                            </div>
+                            <button class="text-neon text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="job">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/job-post-3/600/300.jpg" alt="Job" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-pink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Job</div>
+                        <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-neon px-3 py-1 rounded-full">₹8-12 LPA</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Razorpay</div>
+                                <div class="text-[10px] text-gray-500">Company • 1d ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">SDE Intern — Frontend (React)</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Looking for driven frontend interns who've built real projects. Remote first, 6-month internship with PPO.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">React</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Remote</span>
+                            </div>
+                            <button class="text-pink text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="hackathon">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/hack-post-4/600/300.jpg" alt="Hackathon" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-neon text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Hackathon</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-teal-500"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Kavya Nair</div>
+                                <div class="text-[10px] text-gray-500">VIT Vellore • 8h ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">Full Stack Dev Needed — Google DevFest</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Building a sustainability tracker. Need someone who knows Next.js and can deploy fast.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Next.js</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Full Stack</span>
+                            </div>
+                            <button class="text-neon text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="project">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/project-post-5/600/300.jpg" alt="Project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Project</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-pink-500"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Rahul Verma</div>
+                                <div class="text-[10px] text-gray-500">IIIT Hyderabad • 12h ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">Blockchain Voting System — Research Collaborators</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Academic + practical project on e-governance. Looking for blockchain devs and policy researchers.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Web3</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Research</span>
+                            </div>
+                            <button class="text-neon text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feed-card group bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden hover:bg-white/[0.05] transition-all duration-500" data-category="job">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/job-post-6/600/300.jpg" alt="Job" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-pink text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Job</div>
+                        <div class="absolute top-4 right-4 bg-dark/80 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-neon px-3 py-1 rounded-full">₹15-20 LPA</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600"></div>
+                            <div>
+                                <div class="text-xs font-bold text-white">Microsoft</div>
+                                <div class="text-[10px] text-gray-500">Company • 2d ago</div>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-lg font-bold uppercase tracking-tight mb-2">New Grad SDE — Cloud & AI Team</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-4">Hiring top engineering grads for the Azure AI team. Strong DSA + system design skills required.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">DSA</span>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 bg-white/5 px-3 py-1 rounded-full">Cloud</span>
+                            </div>
+                            <button class="text-pink text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Apply →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="text-xs font-bold uppercase tracking-widest text-gray-400 border border-white/10 px-8 py-4 rounded-full hover:border-neon hover:text-neon transition-all duration-300">
+                    View All Posts <i data-lucide="arrow-right" class="w-4 h-4 inline ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-neon">Testimonials</span>
+                <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4 text-black">
+                    Students <span class="text-neon">Love</span> Us
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-sm p-8 border border-gray-200 hover:shadow-xl transition-all duration-500">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"Found my SIH team here in just 2 hours. We ended up winning at the national level! The cross-college matching is a game changer."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon to-blue-500"></div>
+                        <div>
+                            <div class="text-sm font-bold text-black">Sneha Gupta</div>
+                            <div class="text-xs text-gray-400">IIT Delhi • CSE '25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-sm p-8 border border-gray-200 hover:shadow-xl transition-all duration-500 md:translate-y-8">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"As a startup founder, hiring from StudentHub gave us interns who actually build things. The project portfolios made screening so easy."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink to-orange-500"></div>
+                        <div>
+                            <div class="text-sm font-bold text-black">Vikram Patel</div>
+                            <div class="text-xs text-gray-400">Founder, BuildFast</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-sm p-8 border border-gray-200 hover:shadow-xl transition-all duration-500">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">"Our robotics club got 200+ signups from 15 colleges after running a banner campaign here. Way better than Instagram ads."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600"></div>
+                        <div>
+                            <div class="text-sm font-bold text-black">Ananya Reddy</div>
+                            <div class="text-xs text-gray-400">President, RoboVIT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-neon">Pricing</span>
+                <h2 class="font-heading text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-[0.9] mt-4">
+                    Free For <span class="text-neon">Students.</span><br>Simple For Business.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Free -->
+                <div class="bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Student Free</div>
+                    <div class="font-heading text-5xl font-bold text-white">₹0</div>
+                    <div class="text-xs text-gray-500 mt-1">Forever free for students</div>
+                    <hr class="border-white/10 my-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Create verified profile
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Post & browse requests
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Direct messaging
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Project portfolio
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Apply to jobs
+                        </li>
+                    </ul>
+                    <button class="mt-8 w-full text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-full border border-white/10 text-gray-400 hover:border-neon hover:text-neon transition-all duration-300">Sign Up Free</button>
+                </div>
+
+                <div class="relative bg-white/[0.02] border border-neon/30 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500 scale-[1.02]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neon text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Popular</div>
+                    <div class="text-xs font-bold uppercase tracking-widest text-neon mb-2">Company Pro</div>
+                    <div class="font-heading text-5xl font-bold text-white">₹5K</div>
+                    <div class="text-xs text-gray-500 mt-1">per month</div>
+                    <hr class="border-white/10 my-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            10 job posts/month
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Company profile page
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            1 banner placement
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Analytics dashboard
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Direct applicant messaging
+                        </li>
+                    </ul>
+                    <button class="mt-8 w-full bg-neon text-black text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-full hover:bg-white transition-all duration-300">Get Started</button>
+                </div>
+
+                <div class="bg-white/[0.02] border border-white/10 rounded-sm p-8 hover:bg-white/[0.05] transition-all duration-500">
+                    <div class="text-xs font-bold uppercase tracking-widest text-pink mb-2">Enterprise</div>
+                    <div class="font-heading text-5xl font-bold text-white">Custom</div>
+                    <div class="text-xs text-gray-500 mt-1">tailored to your needs</div>
+                    <hr class="border-white/10 my-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-pink flex-shrink-0"></i>
+                            Unlimited job posts
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-pink flex-shrink-0"></i>
+                            Multi-banner campaigns
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-pink flex-shrink-0"></i>
+                            Sponsored event hosting
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-pink flex-shrink-0"></i>
+                            Dedicated account manager
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-400">
+                            <i data-lucide="check" class="w-4 h-4 text-pink flex-shrink-0"></i>
+                            API access & integrations
+                        </li>
+                    </ul>
+                    <button class="mt-8 w-full text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-full border border-pink/30 text-pink hover:bg-pink hover:text-white transition-all duration-300">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 relative overflow-hidden">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-dark via-dark to-transparent"></div>
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-neon rounded-full blur-[200px] opacity-10"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink rounded-full blur-[200px] opacity-10"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <h2 class="font-heading text-4xl md:text-7xl font-bold uppercase tracking-tighter leading-[0.85]">
+                Stop Searching.<br>Start <span class="text-neon">Building.</span>
+            </h2>
+            <p class="mt-6 text-sm md:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
+                Join thousands of students and companies already using StudentHub to create, connect, and grow. Your next team, project, or job is waiting.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="gradient-border pulse-glow">
+                    <button class="bg-dark text-white text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-neon hover:text-black transition-all duration-300 flex items-center gap-3">
+                        <span>Create Free Account</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <button class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white px-8 py-5 transition-colors">
+                    I'm a Company →
+                </button>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center gap-3">
+                <div class="flex -space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-neon to-blue-500 border-2 border-dark"></div>
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink to-purple-500 border-2 border-dark"></div>
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 border-2 border-dark"></div>
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-teal-500 border-2 border-dark"></div>
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-pink-500 border-2 border-dark"></div>
+                </div>
+                <span class="text-xs text-gray-500">Join xx,xxx+ students</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-dark">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-9 h-9 rounded-lg bg-neon flex items-center justify-center">
+                            <span class="text-black font-heading font-bold text-lg">S</span>
+                        </div>
+                        <span class="font-heading font-bold text-xl uppercase tracking-tight">StudentHub</span>
+                    </a>
+                    <p class="text-sm text-gray-500 leading-relaxed max-w-sm mb-6">
+                        India's largest cross-college student collaboration platform. Find teammates, land jobs, and grow your network.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-neon hover:border-neon transition-all duration-300">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-neon hover:border-neon transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-neon hover:border-neon transition-all duration-300">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-neon hover:border-neon transition-all duration-300">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-6">Platform</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Find Teammates</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Job Board</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Hackathons</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Project Collabs</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Messaging</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-6">For Business</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Post Jobs</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Banner Ads</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Promotions</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-neon transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-white/10 my-12">
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-gray-600">© 2025 StudentHub. All rights reserved.</p>
+                <p class="text-xs text-gray-600">Made with <span class="text-pink">♥</span> for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50 md:hidden">
+        <button class="w-full bg-neon text-black text-xs font-bold uppercase tracking-widest py-4 rounded-full shadow-2xl flex items-center justify-center gap-2" style="box-shadow: 0 0 30px rgba(0,255,157,0.4);">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            Join StudentHub — Free
+        </button>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
